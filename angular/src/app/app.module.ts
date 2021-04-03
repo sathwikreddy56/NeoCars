@@ -1,6 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule } from '@angular/forms';
+import{MatCardModule} from '@angular/material/card';
+import{MatTabsModule} from '@angular/material/tabs';
+import{MatFormFieldModule,} from '@angular/material/form-field';
+import{MatInputModule} from '@angular/material/input';
+import{ MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox'
+import{ MatIconModule} from '@angular/material/icon';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminSideComponent } from './admin-side/admin-side.component';
@@ -16,6 +25,8 @@ import { SuperAdminDashboardComponent } from './super-admin-side/super-admin-das
 import { SuperAdminNavbarComponent } from './super-admin-side/super-admin-navbar/super-admin-navbar.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 
 @NgModule({
   declarations: [
@@ -37,7 +48,16 @@ import { SignupComponent } from './auth/signup/signup.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
