@@ -16,18 +16,27 @@
                   <input  matInput  placeholder="mobileNumber" name="mobileNumber" id="mobilenumber"  required>
                </mat-form-field>
                <mat-form-field class="full-width">
-                  <mat-label>Enter Username</mat-label>
-                  <input  matInput  placeholder="userName" name="user Name" id="username" required>
+                  <mat-label>Enter Seller Name</mat-label>
+                  <input  matInput  placeholder="adminName" name="Seller Name" id="adminname" required>
                </mat-form-field>
                <mat-form-field class="full-width">
-                  <mat-label>Enter Age</mat-label>
-                  <input  matInput  placeholder="age" name="age" id="age" required>
+                  <mat-label>Enter Company Name</mat-label>
+                  <input  matInput  placeholder="companyName" name="Company Name" id="companyname" required>
                </mat-form-field>
+               <mat-form-field class="full-width">
+                <mat-label>Enter Company Image Url</mat-label>
+                <input  matInput  placeholder="companyImageUrl" name="Company Image Url" id="companyimageURL" required>
+             </mat-form-field>
+               <mat-form-field class="full-width">
+                  <mat-label>Address</mat-label>
+                  <input  matInput  placeholder="Address" name="address" id="companyAddress" required>
+               </mat-form-field>
+               
         </form>
         <button mat-raised-button class="login-button" id="submitButton" >
              Submit
           </button>
-          <button mat-raised-button class="login-button" id="loginLink" routerLink="/login" >
+          <button mat-raised-button class="login-button" id="adminLoginLink" routerLink="/login" >
             Go to Login
          </button>
       </mat-card-content>

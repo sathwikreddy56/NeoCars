@@ -10,8 +10,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-  }
-  
+  } 
+
+
   mat-card {
     width: 30%;
     margin: 10% auto;

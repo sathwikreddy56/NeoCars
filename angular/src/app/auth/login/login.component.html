@@ -1,18 +1,18 @@
 <div class="login-page">
-    <mat-card class="mat-elevation-z12">
+    <mat-card class="mat-elevation-z12" id="loginBox">
       <mat-card-title style="text-align:center;">Neo Cars</mat-card-title>
       <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
-        <mat-tab label="USER">
+        <mat-tab label="USER" id="userTab">
           <mat-card-content>
             <form action="">
               <mat-form-field>
-                <input matInput placeholder="Email" required name="email" ngModel #email="ngModel">
+                <input matInput placeholder="Email" required name="email" ngModel #email="ngModel" id="email">
                 <mat-error *ngIf="email.invalid">Email is required</mat-error>
                 <mat-icon matSuffix>email</mat-icon>
               </mat-form-field>
               <mat-form-field>
                 <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel
-                  #password="ngModel">
+                  #password="ngModel" id="password">
                 <mat-error *ngIf="password.errors && password.errors.required">
                   Password is required
                 </mat-error>
@@ -22,26 +22,26 @@
                 <mat-icon matSuffix>lock</mat-icon>
               </mat-form-field>
               <!-- <mat-checkbox>Remember Me!</mat-checkbox> -->
-              <button mat-raised-button color="primary" class="login-button" (click)="isUserPresent()">
-                LOGIN
+              <button mat-raised-button color="primary" class="login-button" (click)="isUserPresent()" id="submitButton">
+                SUBMIT
               </button>
             </form>
-            <button mat-raised-button class="login-button" (click)="newChange()">
+            <button mat-raised-button class="login-button" routerLink="/user/signup" id="userSignupLink">
               Sign Up
             </button>
           </mat-card-content>
         </mat-tab>
-        <mat-tab  label="ADMIN">
+        <mat-tab  label="ADMIN" id="adminTab">
           <mat-card-content>
             <form action="">
               <mat-form-field>
-                <input matInput placeholder="Email" required name="email" ngModel #email="ngModel">
+                <input matInput placeholder="Email" required name="email" ngModel #email="ngModel" id="email">
                 <mat-error *ngIf="email.invalid">Email is required</mat-error>
                 <mat-icon matSuffix>email</mat-icon>
               </mat-form-field>
               <mat-form-field>
                 <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel
-                  #password="ngModel">
+                  #password="ngModel" id="password">
                 <mat-error *ngIf="password.errors && password.errors.required">
                   Password is required
                 </mat-error>
@@ -51,11 +51,11 @@
                 <mat-icon matSuffix>lock</mat-icon>
               </mat-form-field>
               <!-- <mat-checkbox>Remember Me!</mat-checkbox> -->
-              <button mat-raised-button color="primary" class="login-button" (click)="isAdminPresent()">
-                LOGIN
+              <button mat-raised-button color="primary" class="login-button" (click)="isAdminPresent()" id="submitButton">
+                SUBMIT
               </button>
             </form>
-            <button mat-raised-button class="login-button" (click)="adminSignUp()">
+            <button mat-raised-button class="login-button" routerLink="/admin/signup">
               Sign Up
             </button>
           </mat-card-content>
@@ -63,6 +63,5 @@
       </mat-tab-group>
     </mat-card>
   </div>
-  <router-outlet></router-outlet>
 <router-outlet></router-outlet>
 

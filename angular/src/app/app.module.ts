@@ -27,6 +27,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
+import { SignupAdminComponent } from './auth/signup-admin/signup-admin.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
     SuperAdminNavbarComponent,
     LoginComponent,
     SignupComponent,
+    SignupAdminComponent,
    
   ],
   imports: [
