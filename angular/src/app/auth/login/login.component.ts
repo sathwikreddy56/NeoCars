@@ -1,30 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {  NgModel } from '@angular/forms';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) {}
-
-  newChange(): void {
-      this.router.navigateByUrl('user/signup');
+  constructor(private http: HttpClient,private router: Router) {}
+  isUserPresent(email:NgModel,password:NgModel): void { 
+    this.generateToken({"email":email.value,"password":password.value})
+      .subscribe(data=>{
+        if(data.isAuth){
+          let tokenStr = 'Bearer ' + data.token;
+          localStorage.setItem('token',tokenStr)
+          this.router.navigateByUrl('user/dashboard');
+        }else{
+          alert("invalid creadentials")
+          this.router.navigateByUrl('user/login');
+        }
+        
+      }
+    );
   }
-  adminSignUp(): void {
-    this.router.navigateByUrl('admin/signup');
-}
-isUserPresent(): void {
-  // document.getElementById
-  this.router.navigateByUrl('user/dashboard');
-}
-isAdminPresent(): void {
-this.router.navigateByUrl('admin/dashboard');
-}
-
-  ngOnInit(): void {
+  public generateToken(request: any) {
+    return this.http.post<{isAuth:boolean,token:string}>("http://localhost:8080/user/login", request, {  responseType: 'json' });
   }
-
+  isAdminPresent(): void {
+  this.router.navigateByUrl('admin/dashboard');
+  }
+  ngOnInit(): void {}
 }

@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { FormsModule } from '@angular/forms';
 import{MatCardModule} from '@angular/material/card';
 import{MatTabsModule} from '@angular/material/tabs';
@@ -9,6 +8,7 @@ import{MatInputModule} from '@angular/material/input';
 import{ MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox'
 import{ MatIconModule} from '@angular/material/icon';
+import {HttpClient,HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +46,7 @@ import { SignupAdminComponent } from './auth/signup-admin/signup-admin.component
     LoginComponent,
     SignupComponent,
     SignupAdminComponent,
-   
+    
   ],
   imports: [
     BrowserModule,
@@ -59,7 +59,8 @@ import { SignupAdminComponent } from './auth/signup-admin/signup-admin.component
     MatCheckboxModule,
     MatIconModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

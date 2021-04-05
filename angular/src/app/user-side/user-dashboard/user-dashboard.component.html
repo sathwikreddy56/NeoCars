@@ -1,1 +1,9 @@
-<p>user-dashboard works!</p>
+
+ <ul class="heroes">
+    <li *ngFor="let company of companies">
+      <a routerLink="user/companyDetail/{{company.companyName}}">
+        <span class="badge">{{company.companyName}}</span> {{company.companyAddress}}
+      </a>
+    </li>
+  </ul>
+  

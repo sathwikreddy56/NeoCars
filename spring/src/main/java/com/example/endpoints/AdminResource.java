@@ -48,6 +48,7 @@ public class AdminResource {
 		System.out.println(Arrays.toString(CarService.getdashboard(Eid).toArray()));
 		return new ResponseEntity<>(CarService.getdashboard(Eid),HttpStatus.OK);
 	}
+	//Basic details
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody LoginModel ep) {
 		JwtResponse out= new JwtResponse(null,false);
@@ -85,6 +86,8 @@ public class AdminResource {
 		System.out.println("Admin Added");
         return new ResponseEntity<>("Admin Added", HttpStatus.OK);
     }
+	
+	//Car Details
 	@PostMapping("/addCar")  //4
 	public ResponseEntity<String> addCar(@RequestBody CarModel car){
 		Integer newCar = carService.addCarModel(car);
@@ -108,12 +111,10 @@ public class AdminResource {
         return new ResponseEntity<>("Car Deleted",HttpStatus.OK);
     }
 	
-	
+	//Profile Details
 	@PostMapping("/profile")//7
 	public ResponseEntity<AdminModel> ProfileDetails(@RequestBody getemail id){
-		System.out.println("in profile"+id.getEmail());
 		AdminModel admin = AdminService.findAdminModelByadminID(id.getEmail());
-		System.out.println(admin);
 		return new ResponseEntity<>(admin, HttpStatus.OK);
 	}
 	@GetMapping("/editProfile")//8

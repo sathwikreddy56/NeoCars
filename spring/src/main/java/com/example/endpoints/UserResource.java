@@ -58,7 +58,7 @@ public class UserResource {
 		}catch(AuthenticationException e) {
 			out.setIsAuth(false);
 			out.setToken(null);
-			return new ResponseEntity<>(out, HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<>(out, HttpStatus.OK);
 		}
     }
 	@GetMapping("/dashboard")
